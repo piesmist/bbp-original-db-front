@@ -25,7 +25,7 @@ $(function () {
         let searchedMusicList = [];
         if (word !== "") {
             searchedMusicList = musicList.filter(music => {
-                return music[4].indexOf(word) !== -1
+                return music[4].indexOf(word) !== -1 || music[5].indexOf(word) !== -1
             }
             );
         } else {
