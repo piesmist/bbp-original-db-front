@@ -14,8 +14,6 @@ $(function () {
         $("#music-list thead tr").append(thead.join());
 
         //曲を表示する
-
-
         setTable(musicList);
     }).fail(function (data) {
         console.log("error");
