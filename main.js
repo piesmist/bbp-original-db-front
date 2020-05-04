@@ -35,6 +35,37 @@ $(function () {
         setTable(searchedMusicList);
     });
 
+    $('input[name="contributor"]').keyup(function (e) {
+        const word = this.value;
+        let searchedMusicList = [];
+        if (word !== "") {
+            searchedMusicList = musicList.filter(music => {
+                return music[1].indexOf(word) !== -1
+            }
+            );
+        } else {
+            searchedMusicList = musicList;
+        }
+        console.log(searchedMusicList)
+        setTable(searchedMusicList);
+    });
+
+    $('input[name="anime"]').keyup(function (e) {
+        const word = this.value;
+        let searchedMusicList = [];
+        if (word !== "") {
+            searchedMusicList = musicList.filter(music => {
+                return music[9].indexOf(word) !== -1
+            }
+            );
+        } else {
+            searchedMusicList = musicList;
+        }
+        console.log(searchedMusicList)
+        setTable(searchedMusicList);
+    });
+
+
     function setTable(list) {
         //tbodyを初期化する
         $("#music-list tbody").empty();
