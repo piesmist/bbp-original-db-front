@@ -1,7 +1,7 @@
 # [bbp-original-db-front](https://piesmist.github.io/bbp-original-db-front/)
 # このサイトは [GitHub Pages](https://pages.github.com/) を使って構築されています。
 
-##【今後やりたいこと】
+## 【今後やりたいこと】
 
 ### CSV表示に関する制御  
 
