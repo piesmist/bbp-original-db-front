@@ -12,22 +12,45 @@
 </head>
 
 <body>
-  <div>
-    　　　曲　名　検　索　　
-    <input name="title" type="text">
-  </div>
-  <div>
-    　　作曲(製作)者名検索　　
-    <input name="contributor" type="text">
-    <br>
-  </div>
-  <div>
-    ゲーム・アニメタイトル検索
-    <input name="anime" type="text">
-    <br>
-  </div>
 
-    <table id="music-list">
+  <!-- header -->
+    <header>
+    	<h1 class="headline">
+        <a>BBP List</a>
+      </h1>
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <a>Home</a>
+        </li>
+        <li class="nav-list-item">Music-list</li>
+        <li class="nav-list-item">Twitter(@bbp_list)</li>
+        <li class="nav-list-item">Twitter(@piesmist)</li>
+
+      </ul>
+    </header>
+
+  <table id="search" align="center">
+    <tr>
+      <th>曲名検索</th>
+      <td><input name="title" type="text"></td>
+    </tr>
+    <tr>
+      <th>アーティスト名検索</th>
+      <td><input name="artist" type="text"></td>
+    </tr>
+    <tr>
+      <th>作曲(製作)者名検索</th>
+      <td><input name="contributor" type="text"></td>
+    </tr>
+    <tr>
+      <th>ゲーム・アニメタイトル検索</th>
+      <td><input name="anime" type="text"></td>
+    </tr>
+  </table>
+
+<div align="center">データ更新日時：2020年5月4日</div>
+
+    <table id="music-list" align="center">
         <thead>
             <tr>
             </tr>
@@ -44,6 +67,18 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="main.js"></script>
+
+    <!-- footer -->
+      <footer>
+    　　<ul class="footer-menu">
+         <li>Home ｜</li>
+         <li>Music-list ｜</li>
+         <li>Twitter ｜</li>
+         <li>あ～～</li>
+        </ul>
+        <p>© All rights reserved by piesmist feat. achcolor</p>
+      </footer>
+
 </body>
 
 </html>

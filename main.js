@@ -65,6 +65,21 @@ $(function () {
         setTable(searchedMusicList);
     });
 
+    $('input[name="artist"]').keyup(function (e) {
+        const word = this.value;
+        let searchedMusicList = [];
+        if (word !== "") {
+            searchedMusicList = musicList.filter(music => {
+                return music[5].indexOf(word) !== -1
+            }
+            );
+        } else {
+            searchedMusicList = musicList;
+        }
+        console.log(searchedMusicList)
+        setTable(searchedMusicList);
+    });
+
 
     function setTable(list) {
         //tbodyを初期化する
