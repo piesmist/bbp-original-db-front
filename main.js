@@ -4,8 +4,9 @@ $(function () {
 
     //CSVのデータを取得する
     $.ajax({
-        url: "https://storage.googleapis.com/bbp-original-db-storage/dev/music.csv",
+        url: "https://storage.googleapis.com/bbp-original-db-storage/prod/music.csv",
     }).done(function (data) {
+        data = data.replace(/"/g, "");
         musicList = $.csv.toArrays(data);
 
         //ヘッダを表示する
