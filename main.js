@@ -20,6 +20,8 @@ $(function () {
     });;
 
     //検索欄に文字を入力した
+
+        // 曲名検索
     $('input[name="title"]').keyup(function (e) {
         const word = this.value;
         let searchedMusicList = [];
@@ -35,6 +37,9 @@ $(function () {
         setTable(searchedMusicList);
     });
 
+
+
+        // 製作者検索
     $('input[name="contributor"]').keyup(function (e) {
         const word = this.value;
         let searchedMusicList = [];
@@ -50,6 +55,9 @@ $(function () {
         setTable(searchedMusicList);
     });
 
+
+
+        // アニメタイトル検索
     $('input[name="anime"]').keyup(function (e) {
         const word = this.value;
         let searchedMusicList = [];
@@ -65,6 +73,9 @@ $(function () {
         setTable(searchedMusicList);
     });
 
+
+
+        // アーティスト検索
     $('input[name="artist"]').keyup(function (e) {
         const word = this.value;
         let searchedMusicList = [];
@@ -79,6 +90,45 @@ $(function () {
         console.log(searchedMusicList)
         setTable(searchedMusicList);
     });
+
+
+
+          // 備考欄検索
+    $('input[name="other"]').keyup(function (e) {
+        const word = this.value;
+        let searchedMusicList = [];
+        if (word !== "") {
+            searchedMusicList = musicList.filter(music => {
+                return music[7].indexOf(word) !== -1
+            }
+            );
+        } else {
+            searchedMusicList = musicList;
+        }
+        console.log(searchedMusicList)
+        setTable(searchedMusicList);
+    });
+
+
+
+    // ジャンル検索
+$('input[name="genre"]').keyup(function (e) {
+  const word = this.value;
+  let searchedMusicList = [];
+  if (word !== "") {
+      searchedMusicList = musicList.filter(music => {
+          return music[8].indexOf(word) !== -1
+      }
+      );
+  } else {
+      searchedMusicList = musicList;
+  }
+  console.log(searchedMusicList)
+  setTable(searchedMusicList);
+});
+
+
+
 
 
     function setTable(list) {
