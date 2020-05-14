@@ -28,7 +28,7 @@ $(function () {
         let searchedMusicList = [];
         if (word !== "") {
             searchedMusicList = musicList.filter(music => {
-                return music[4].indexOf(word) !== -1
+                return music[2].indexOf(word) !== -1
             }
             );
         } else {
@@ -64,7 +64,7 @@ $(function () {
         let searchedMusicList = [];
         if (word !== "") {
             searchedMusicList = musicList.filter(music => {
-                return music[9].indexOf(word) !== -1
+                return music[7].indexOf(word) !== -1
             }
             );
         } else {
@@ -82,7 +82,7 @@ $(function () {
         let searchedMusicList = [];
         if (word !== "") {
             searchedMusicList = musicList.filter(music => {
-                return music[5].indexOf(word) !== -1
+                return music[3].indexOf(word) !== -1
             }
             );
         } else {
@@ -100,7 +100,7 @@ $(function () {
         let searchedMusicList = [];
         if (word !== "") {
             searchedMusicList = musicList.filter(music => {
-                return music[7].indexOf(word) !== -1
+                return music[5].indexOf(word) !== -1
             }
             );
         } else {
@@ -118,7 +118,7 @@ $('input[name="genre"]').keyup(function (e) {
   let searchedMusicList = [];
   if (word !== "") {
       searchedMusicList = musicList.filter(music => {
-          return music[8].indexOf(word) !== -1
+          return music[6].indexOf(word) !== -1
       }
       );
   } else {
