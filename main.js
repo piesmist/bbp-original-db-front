@@ -128,6 +128,18 @@ $('input[name="genre"]').keyup(function (e) {
   setTable(searchedMusicList);
 });
 
+  function setTable(list){
+    //tbodyを初期化する
+    $("#music-list tbody").enpty();
+    if (list.length === 0) return false;
+    const tbody = list.map(row => {
+      const tr = row.map(d => `<tb>${d}</td>`);
+      return `<tr>${tr.join()}</tr>`;
+    });
+    $("music-list tbody").append(tbody);
+  }
+
+
 function csvToArray(csv, sepalator) {
   const rows = csv.split("\n");
   let arrays = new Array();
