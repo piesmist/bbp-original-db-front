@@ -46,7 +46,7 @@ $(function () {
         let searchedMusicList = [];
         if (word !== "") {
             searchedMusicList = musicList.filter(music => {
-                return music[1].indexOf(word) !== -1
+                return music[0].indexOf(word) !== -1
             }
             );
         } else {
