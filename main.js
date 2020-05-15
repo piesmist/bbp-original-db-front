@@ -6,8 +6,8 @@ $(function () {
     $.ajax({
         url: "https://storage.googleapis.com/bbp-original-db-storage/prod/music.csv",
     }).done(function (data) {
-        data = data.replace(/"/g, "");
-        musicList = $.csv.toArrays(data);
+        //tsvを二次元配列に変換する
+        musicList = csvToArray(data, "\t");
 
         //ヘッダを表示する
         const head = musicList.splice(0, 1)[0];
@@ -128,10 +128,6 @@ $('input[name="genre"]').keyup(function (e) {
   setTable(searchedMusicList);
 });
 
-
-
-
-
     function setTable(list) {
         //tbodyを初期化する
         $("#music-list tbody").empty();
@@ -142,4 +138,11 @@ $('input[name="genre"]').keyup(function (e) {
         });
         $("#music-list tbody").append(tbody);
     }
+
+    function csvToArray(csv, sepalator) {
+        const rows = csv.split("\n");
+        const array = new Array();
+        rows.forEach((row) => array.push(row.split(sepalator)));
+        return array;
+      }
 });
