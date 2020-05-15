@@ -128,21 +128,14 @@ $('input[name="genre"]').keyup(function (e) {
   setTable(searchedMusicList);
 });
 
-    function setTable(list) {
-        //tbodyを初期化する
-        $("#music-list tbody").empty();
-        if (list.length === 0) return false;
-        const tbody = list.map(row => {
-            const tr = row.map(d => `<td>${d}</td>`);
-            return `<tr>${tr.join()}</tr>`;
-        });
-        $("#music-list tbody").append(tbody);
-    }
-
-    function csvToArray(csv, sepalator) {
-        const rows = csv.split("\n");
-        const array = new Array();
-        rows.forEach((row) => array.push(row.split(sepalator)));
-        return array;
-      }
+function csvToArray(csv, sepalator) {
+  const rows = csv.split("\n");
+  let arrays = new Array();
+  rows.forEach((row) => {
+    array = row.split(sepalator);
+    if (array.length < 2) return;
+    arrays.push(array);
+  });
+  return arrays;
+}
 });
