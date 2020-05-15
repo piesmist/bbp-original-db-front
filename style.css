@@ -14,11 +14,10 @@ body {
 }
 
 header {
-  height: 100px;
+  height: 110px;
   width: 100%;
   padding: 15px 0;
-  background-color: #337079;
-  color: white;
+  background-color: #ffffff;
 }
 header .headline{
     line-height: 100px;
