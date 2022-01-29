@@ -22,7 +22,7 @@ $(function () {
 
     //検索欄に文字を入力した
 
-        // 曲名検索
+    // 曲名検索
     $('input[name="title"]').keyup(function (e) {
         const word = this.value;
         let searchedMusicList = [];
@@ -40,7 +40,7 @@ $(function () {
 
 
 
-        // 製作者検索
+    // 製作者検索
     $('input[name="contributor"]').keyup(function (e) {
         const word = this.value;
         let searchedMusicList = [];
@@ -58,7 +58,7 @@ $(function () {
 
 
 
-        // アニメタイトル検索
+    // アニメタイトル検索
     $('input[name="anime"]').keyup(function (e) {
         const word = this.value;
         let searchedMusicList = [];
@@ -76,7 +76,7 @@ $(function () {
 
 
 
-        // アーティスト検索
+    // アーティスト検索
     $('input[name="artist"]').keyup(function (e) {
         const word = this.value;
         let searchedMusicList = [];
@@ -94,7 +94,7 @@ $(function () {
 
 
 
-          // 備考欄検索
+    // 備考欄検索
     $('input[name="other"]').keyup(function (e) {
         const word = this.value;
         let searchedMusicList = [];
@@ -113,41 +113,41 @@ $(function () {
 
 
     // ジャンル検索
-$('input[name="genre"]').keyup(function (e) {
-  const word = this.value;
-  let searchedMusicList = [];
-  if (word !== "") {
-      searchedMusicList = musicList.filter(music => {
-          return music[6].indexOf(word) !== -1
-      }
-      );
-  } else {
-      searchedMusicList = musicList;
-  }
-  console.log(searchedMusicList)
-  setTable(searchedMusicList);
-});
-
-  function setTable(list) {
-    //tbodyを初期化する
-    $("#music-list tbody").empty();
-    if (list.length === 0) return false;
-    const tbody = list.map(row => {
-        const tr = row.map(d => `<td>${d}</td>`);
-        return `<tr>${tr.join()}</tr>`;
+    $('input[name="genre"]').keyup(function (e) {
+        const word = this.value;
+        let searchedMusicList = [];
+        if (word !== "") {
+            searchedMusicList = musicList.filter(music => {
+                return music[6].indexOf(word) !== -1
+            }
+            );
+        } else {
+            searchedMusicList = musicList;
+        }
+        console.log(searchedMusicList)
+        setTable(searchedMusicList);
     });
-    $("#music-list tbody").append(tbody);
-}
+
+    function setTable(list) {
+        //tbodyを初期化する
+        $("#music-list tbody").empty();
+        if (list.length === 0) return false;
+        const tbody = list.map(row => {
+            const tr = row.map(d => `<td>${d}</td>`);
+            return `<tr>${tr.join()}</tr>`;
+        });
+        $("#music-list tbody").append(tbody);
+    }
 
 
-  function csvToArray(csv, sepalator) {
-  const rows = csv.split("\n");
-  let arrays = new Array();
-  rows.forEach((row) => {
-    array = row.split(sepalator);
-    if (array.length < 2) return;
-    arrays.push(array);
-  });
-  return arrays;
-}
+    function csvToArray(csv, sepalator) {
+        const rows = csv.split("\n");
+        let arrays = new Array();
+        rows.forEach((row) => {
+            array = row.split(sepalator);
+            if (array.length < 2) return;
+            arrays.push(array);
+        });
+        return arrays;
+    }
 });
