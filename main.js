@@ -133,7 +133,16 @@ $(function () {
         $("#music-list tbody").empty();
         if (list.length === 0) return false;
         const tbody = list.map(row => {
-            const tr = row.map(d => `<td>${d}</td>`);
+            const tr = row.map((d, index) => {
+                if (index === 1) {
+                    if (d === "") {
+                        return `<td></td>`
+                    }
+                    return `<td><a href="${d}" target="blank"><img src="./yt.png" /></a></td>`
+                } else {
+                    return `<td>${d}</td>`
+                }
+            });
             return `<tr>${tr.join()}</tr>`;
         });
         $("#music-list tbody").append(tbody);
