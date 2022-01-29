@@ -30,6 +30,10 @@ header .headline{
     position: relative;
     z-index: 1;
 }
+main{
+padding: 120px 0 0 0;
+}
+
 .nav-list {
     line-height: 100px;
     float: left;
