@@ -52,7 +52,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./bb.html">自作曲リスト（みすと）</a>
+            <a class="nav-link" href="./bb.html">自作曲リスト</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://twitter.com/bbp_list" target="_blank">Twitter(@bbp_list)</a>
@@ -70,57 +70,29 @@
   </div>
 
   <main>
-    <table id="search" align="center">
-      <tr>
-        <th>曲名検索</th>
-        <td><input name="title" type="text"></td>
-      </tr>
-      <tr>
-        <th>アーティスト名検索</th>
-        <td><input name="artist" type="text"></td>
-      </tr>
-      <tr>
-        <th>作曲(製作)者名検索</th>
-        <td><input name="contributor" type="text"></td>
-      </tr>
-      <tr>
-        <th>備考欄検索</th>
-        <td><input name="other" type="text"></td>
-      </tr>
-      <tr>
-        <th>ジャンル検索</th>
-        <td><input name="genre" type="text"></td>
-      </tr>
-      <tr>
-        <th>ゲーム・アニメタイトル検索</th>
-        <td><input name="anime" type="text"></td>
-      </tr>
-    </table>
-    <p align="center">※複数条件の検索はできないヨ！</p>
-    <div align="center">データ更新日時：2022年2月12日</div>
-    <table id="music-list" align="center" class="table table-hover">
-      <thead>
-        <tr>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+
+    <div class="top-point">
+      <div class="box-title">データ更新日時：2022年2月12日</div>
+    </div>
+
+
+
+    <div class="music-container" style="overflow-x:auto;">
+      <table id="music-list" class="table table-hover" style="display:none">
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+
   </main>
   <!-- footer -->
   <footer>
-    <ul class="footer-menu">
-      <li><a href="../index.html">Home</a> ｜</li>
-      <li>Music-list ｜</li>
-      <li><a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdWXe0ReQPqFsyYqCkRqnJgyRVVcr2JqgVUc7biZo_LYGhLaw/viewform?usp=sf_link"
-          target="_blank">新規登録</a> ｜</li>
-      <li>楽曲リクエスト(調整中) ｜</li>
-      <li><a href="http://piesmist.github.io/bb.html">自作曲リスト(みすと)</a> ｜</li>
-      <li><a href="https://twitter.com/bbp_list" target="_blank">Twitter(@bbp_list)</a> ｜</li>
-      <li><a href="https://twitter.com/piesmist" target="_blank">Twitter(@piesmist)</a> ｜</li>
-    </ul>
-    <p>© All rights reserved by piesmist feat. ashcolor</p>
+    <p class="footer-menu">© All rights reserved by piesmist feat. ashcolor</p>
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="assets/jquery.csv.min.js"></script>
@@ -130,7 +102,13 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+  <!-- DateTablesの為のなにか　ここから -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+  <!-- DateTablesの為のなにか　ここまで -->
   <script src="main.js"></script>
+
 </body>
 
 </html>

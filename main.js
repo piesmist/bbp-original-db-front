@@ -11,134 +11,59 @@ $(function () {
 
         //ヘッダを表示する
         const head = musicList.splice(0, 1)[0];
-        const thead = head.map(h => `<th>${h}</th>`);
+        const thead = head.map(h => {
+            return `<th>${h}</th>`
+        });
         $("#music-list thead tr").append(thead.join());
 
         //曲を表示する
         setTable(musicList);
+
+
+
+        // DateTable
+
+        $('#music-list').DataTable({
+            // 日本語表示
+            "language": {
+                "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+            },
+            order: [[5, "desc"]],
+        });
+
+        $('#music-list').css('display', 'initial');
+
+
     }).fail(function (data) {
         console.log("error");
     });;
 
-    //検索欄に文字を入力した
-
-    // 曲名検索
-    $('input[name="title"]').keyup(function (e) {
-        const word = this.value;
-        let searchedMusicList = [];
-        if (word !== "") {
-            searchedMusicList = musicList.filter(music => {
-                return music[2].indexOf(word) !== -1
-            }
-            );
-        } else {
-            searchedMusicList = musicList;
-        }
-        console.log(searchedMusicList)
-        setTable(searchedMusicList);
-    });
-
-
-
-    // 製作者検索
-    $('input[name="contributor"]').keyup(function (e) {
-        const word = this.value;
-        let searchedMusicList = [];
-        if (word !== "") {
-            searchedMusicList = musicList.filter(music => {
-                return music[0].indexOf(word) !== -1
-            }
-            );
-        } else {
-            searchedMusicList = musicList;
-        }
-        console.log(searchedMusicList)
-        setTable(searchedMusicList);
-    });
-
-
-
-    // アニメタイトル検索
-    $('input[name="anime"]').keyup(function (e) {
-        const word = this.value;
-        let searchedMusicList = [];
-        if (word !== "") {
-            searchedMusicList = musicList.filter(music => {
-                return music[7].indexOf(word) !== -1
-            }
-            );
-        } else {
-            searchedMusicList = musicList;
-        }
-        console.log(searchedMusicList)
-        setTable(searchedMusicList);
-    });
-
-
-
-    // アーティスト検索
-    $('input[name="artist"]').keyup(function (e) {
-        const word = this.value;
-        let searchedMusicList = [];
-        if (word !== "") {
-            searchedMusicList = musicList.filter(music => {
-                return music[3].indexOf(word) !== -1
-            }
-            );
-        } else {
-            searchedMusicList = musicList;
-        }
-        console.log(searchedMusicList)
-        setTable(searchedMusicList);
-    });
-
-
-
-    // 備考欄検索
-    $('input[name="other"]').keyup(function (e) {
-        const word = this.value;
-        let searchedMusicList = [];
-        if (word !== "") {
-            searchedMusicList = musicList.filter(music => {
-                return music[5].indexOf(word) !== -1
-            }
-            );
-        } else {
-            searchedMusicList = musicList;
-        }
-        console.log(searchedMusicList)
-        setTable(searchedMusicList);
-    });
-
-
-
-    // ジャンル検索
-    $('input[name="genre"]').keyup(function (e) {
-        const word = this.value;
-        let searchedMusicList = [];
-        if (word !== "") {
-            searchedMusicList = musicList.filter(music => {
-                return music[6].indexOf(word) !== -1
-            }
-            );
-        } else {
-            searchedMusicList = musicList;
-        }
-        console.log(searchedMusicList)
-        setTable(searchedMusicList);
-    });
-
     function setTable(list) {
         //tbodyを初期化する
         $("#music-list tbody").empty();
-        if (list.length === 0) return false;
         const tbody = list.map(row => {
+            if (row[2] === "") {
+                return ""
+            }
             const tr = row.map((d, index) => {
                 if (index === 1) {
                     if (d === "") {
                         return `<td></td>`
                     }
                     return `<td><a href="${d}" target="blank"><img src="./yt.png" /></a></td>`
+
+                    // この辺が横幅のやつ
+
+                } else if (index === 0) {
+                    return `<td style="min-width:85px">${d}</td>`
+                } else if (index === 2) {
+                    return `<td style="min-width:150px">${d}</td>`
+                } else if (index === 6) {
+                    return `<td style="min-width:120px">${d}</td>`
+                } else if (index === 7) {
+                    return `<td style="min-width:300px">${d}</td>`
+
+
                 } else {
                     return `<td>${d}</td>`
                 }
@@ -147,7 +72,6 @@ $(function () {
         });
         $("#music-list tbody").append(tbody);
     }
-
 
     function csvToArray(csv, sepalator) {
         const rows = csv.split("\n");
