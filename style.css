@@ -85,7 +85,7 @@ input {
 }
 
 .top-point p {
-  padding: 15px 20px;
+  padding: 5px 20px;
   margin: 0;
   text-align: center;
 }
@@ -131,8 +131,8 @@ footer {
   text-align: center;
 }
 
-ul.footer-menu li {
-  display: inline;
+.footer-c {
+  line-height: 100px;
 }
 
 /****************
