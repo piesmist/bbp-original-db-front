@@ -25,10 +25,10 @@
 </head>
 
 <body>
-  <!-- 新ヘッダーここから -->
+
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div id="headtitle"><a class="navbar-brand" href="#">BBP List</a></div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(#e6ebec, #b0e0e6)">
+      <div id="headtitle"><a class="navbar-brand" href="#"></a></div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,22 +36,23 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="../bbp-original-db-front/index.html">Music-list <span
-                class="sr-only">(current)</span></a>
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              BBP-List
+            </a>
+            <div class="dropdown-menu active" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">BBP-List</a>
+              <a class="dropdown-item"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdWXe0ReQPqFsyYqCkRqnJgyRVVcr2JqgVUc7biZo_LYGhLaw/viewform?usp=sf_link"
+                target="_blank">新規登録</a>
+              <a class="dropdown-item disabled" href="#">楽曲リクエスト(調整中)</a>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdWXe0ReQPqFsyYqCkRqnJgyRVVcr2JqgVUc7biZo_LYGhLaw/viewform?usp=sf_link"
-              target="_blank">新規登録</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">楽曲リクエスト(調整中)</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://piesmist.github.io/bb.html">自作曲リスト(みすと)</a>
+            <a class="nav-link" href="./bb.html">自作曲リスト（みすと）</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://twitter.com/bbp_list" target="_blank">Twitter(@bbp_list)</a>
@@ -61,12 +62,13 @@
           </li>
         </ul>
         <span class="navbar-text">
-
         </span>
       </div>
     </nav>
   </header>
-  <!-- 新ヘッダーここまで -->
+  <div class="header-toumei">
+  </div>
+
   <main>
     <table id="search" align="center">
       <tr>
