@@ -4,32 +4,6 @@ header {
   z-index: 1;
 }
 
-header .headline {
-  line-height: 100px;
-  float: left;
-  font-size: 30px;
-  margin-left: 200px;
-  position: relative;
-  z-index: 1;
-}
-
-.nav-list {
-  line-height: 100px;
-  float: left;
-  margin-left: 30px;
-  list-style: none;
-  position: relative;
-  z-index: 1;
-}
-
-.nav-list-item {
-  list-style: none;
-  display: inline-block;
-  margin: 0 20px;
-  position: relative;
-  z-index: 1;
-}
-
 .nav-link {
   margin: 0 10px 0 10px;
   font-weight: bold;
@@ -107,7 +81,8 @@ select {
 }
 
 .music-container {
-  margin: 50px;
+  margin: 20px;
+  align-items: center;
 }
 
 .table-hover {
@@ -137,14 +112,14 @@ select {
 
 footer {
   width: 100%;
-  height: 100px;
+  height: 50px;
   background-color: #174a5c;
   color: white;
   text-align: center;
 }
 
 .footer-c {
-  line-height: 100px;
+  line-height: 50px;
 }
 
 /****************

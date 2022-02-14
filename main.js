@@ -19,13 +19,16 @@ $(function () {
         //曲を表示する
         setTable(musicList);
 
-
-
         // DateTable
-
         $('#music-list').DataTable({
+            // 日本語表示
+            "language": {
+                "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+            },
             order: [[5, "desc"]],
         });
+
+
 
         $('#music-list').css('display', 'initial');
 
@@ -47,21 +50,15 @@ $(function () {
                     }
                     return `<td><a href="${d}" target="blank"><img src="./yt.png" /></a></td>`
 
-
-
-
-
                     // この辺が横幅のやつ
-
                 } else if (index === 0) {
                     return `<td style="min-width:85px">${d}</td>`
                 } else if (index === 2) {
-                    return `<td style="min-width:150px">${d}</td>`
+                    return `<td style="min-width:250px">${d}</td>`
                 } else if (index === 6) {
                     return `<td style="min-width:120px">${d}</td>`
                 } else if (index === 7) {
                     return `<td style="min-width:300px">${d}</td>`
-
 
                 } else {
                     return `<td>${d}</td>`
