@@ -24,15 +24,10 @@ $(function () {
         // DateTable
 
         $('#music-list').DataTable({
-            // 日本語表示
-            "language": {
-                "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
-            },
             order: [[5, "desc"]],
         });
 
         $('#music-list').css('display', 'initial');
-
 
     }).fail(function (data) {
         console.log("error");
@@ -51,6 +46,10 @@ $(function () {
                         return `<td></td>`
                     }
                     return `<td><a href="${d}" target="blank"><img src="./yt.png" /></a></td>`
+
+
+
+
 
                     // この辺が横幅のやつ
 

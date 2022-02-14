@@ -84,10 +84,22 @@ input {
   letter-spacing: 0.05em;
 }
 
-.top-point p {
-  padding: 5px 20px;
+.yomikomi {
+  padding: 15px 20px;
   margin: 0;
   text-align: center;
+}
+
+.setsumei {
+  padding: 10px 0;
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+.setsumei-p {
+  padding: 0;
+  margin: 5px 0;
 }
 
 select {
