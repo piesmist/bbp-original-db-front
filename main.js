@@ -23,7 +23,7 @@ $(function () {
         $('#music-list').DataTable({
             // 日本語表示
             "language": {
-                "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Japanese.json"
             },
             order: [[5, "desc"]],
         });
